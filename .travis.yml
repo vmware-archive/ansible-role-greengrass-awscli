@@ -1,0 +1,30 @@
+stages:
+  - lint
+  - test_role
+  - test_docker
+
+language: python
+
+sudo: required
+
+services:
+  - docker
+
+addons:
+  apt:
+    update: true
+
+jobs:
+  include:
+    - stage: lint
+      script: >
+        ansible-playbook tests/test.yml -i tests/inventory --check
+    - stage: test_role
+      script:
+        - ansible-playbook tests/test.yml -i tests/inventory
+    - stage: test_docker
+      script:
+        - docker build -t vmware/awscli .
+        - >
+          docker run -it --rm vmware/awscli tests/test.yml
+          -i tests/inventory -v

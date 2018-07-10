@@ -1,32 +1,75 @@
+Greengrass AWSCLI
+=================
+
+This role provides an installed and configured AWS CLI, ready to call Greengrass
+and other AWS APIs.
+
+Build Status
+------------
+
+[TBD]
+
+Requirements
+------------
+
+You will need to supply AWS credentials to run this role.  
 
 
-# ansible-role-greengrass-awscli
+Role Variables
+--------------
 
-## Overview
+You will most likely need to set all of the following values.
 
-## Try it out
+``` yaml
+# The following come from the AWS Console
+aws_access_key=<your AWS access key>
+aws_secret_key=<your AWS secret key>
 
-### Prerequisites
+```
 
-* Prereq 1
-* Prereq 2
-* Prereq 3
+Dependencies
+------------
 
-### Build & Run
+This role has no particular dependencies.  It has only been tested on
+Ubuntu/Debian.
 
-1. Step 1
-2. Step 2
-3. Step 3
+Example Playbook
+----------------
 
-## Documentation
+Here's an example playbook:
 
-## Releases & Major Branches
+    - hosts: servers
+      roles:
+         - { role: vmware.awscli }
 
-## Contributing
+Getting Started
+---------------
 
-The ansible-role-greengrass-awscli project team welcomes contributions from the community. If you wish to contribute code and you have not
-signed our contributor license agreement (CLA), our bot will update the issue when you open a Pull Request. For any
-questions about the CLA process, please refer to our [FAQ](https://cla.vmware.com/faq). For more detailed information,
-refer to [CONTRIBUTING.md](CONTRIBUTING.md).
+For development or testing of this role, follow these steps.
 
-## License
+* Clone this repo
+* Install ansible and other requirements with pip:
+  ```
+  pip install -r requirements.txt
+  ```
+* You can test the role with:
+  ```
+  molecule converge
+  ```
+
+Alternatively, you can build a docker container and test that way.
+
+* Clone this repo
+* Build the docker images
+  ```
+  docker build -t vmware/awscli .
+  ```
+* Run the image on the target role
+  ```
+  docker run -it vmware/awscli
+  ```
+
+License
+-------
+
+Apache 2.0

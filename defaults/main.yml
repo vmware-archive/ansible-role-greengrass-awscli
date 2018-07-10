@@ -1,0 +1,7 @@
+---
+# defaults file for ansible-role-greengrass-awscli
+
+# AWS credentials
+aws_access_key: FIXME-ADD-YOUR-VALUE-HERE
+aws_secret_key: FIXME-ADD-YOUR-VALUE-HERE
+
