@@ -1,0 +1,22 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: huxoll
+  description: This role installs the AWS CLI for Linux and MacOSX
+  company: "VMware"
+  license: Apache
+  min_ansible_version: 2.5
+  platforms:
+  - name: Ubuntu
+    versions:
+      - xenial
+      - artful
+  galaxy_tags:
+    - cloud
+    - microsoft
+    - amazon
+    - aws
+    - greengrass
+    - iot
+    - cli
