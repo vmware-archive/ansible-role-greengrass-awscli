@@ -14,7 +14,6 @@ galaxy_info:
       - artful
   galaxy_tags:
     - cloud
-    - microsoft
     - amazon
     - aws
     - greengrass

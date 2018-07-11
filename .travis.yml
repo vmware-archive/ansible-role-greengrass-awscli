@@ -21,7 +21,7 @@ jobs:
         ansible-playbook tests/test.yml -i tests/inventory --check
     - stage: test_role
       script:
-        - ansible-playbook tests/test.yml -i tests/inventory
+        - sudo ansible-playbook tests/test.yml -i tests/inventory
     - stage: test_docker
       script:
         - docker build -t vmware/awscli .
