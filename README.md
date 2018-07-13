@@ -7,7 +7,7 @@ and other AWS APIs.
 Build Status
 ------------
 
-[TBD]
+[![Build Status](https://travis-ci.org/vmware/ansible-role-greengrass-awscli.svg?branch=master)](https://travis-ci.org/vmware/ansible-role-greengrass-awscli)
 
 Requirements
 ------------
