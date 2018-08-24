@@ -6,3 +6,6 @@ aws_access_key: FIXME-ADD-YOUR-VALUE-HERE
 aws_secret_key: FIXME-ADD-YOUR-VALUE-HERE
 
 aws_region: us-east-1
+
+# Force latest CLI; if true, always update.
+aws_cli_latest: false

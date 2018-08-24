@@ -24,6 +24,11 @@
     - ansible_os_family == "Debian"
     - not ansible_check_mode
 
+- name: Check if aws cli is already available
+  shell: command -v aws >/dev/null 2>&1
+  register: is_aws_on_path
+  ignore_errors: yes
+
 - name: install-aws-cli (system)
   pip:
     name: awscli
@@ -33,6 +38,7 @@
   when:
     - ansible_os_family == "Debian"
     - not ansible_check_mode
+    - is_aws_on_path.failed or aws_cli_latest
 
 # Installing with --user for OSX.  OSX system Python is a real mess.
 - name: install-aws-cli
@@ -43,6 +49,7 @@
   when:
     - ansible_os_family == "Darwin"
     - not ansible_check_mode
+    - is_aws_on_path.failed or aws_cli_latest
 
 - name: Install pybin
   pip:
