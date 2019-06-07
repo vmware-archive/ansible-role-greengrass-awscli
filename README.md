@@ -72,4 +72,4 @@ Alternatively, you can build a docker container and test that way.
 License
 -------
 
-Apache 2.0
+This code is Dual Licensed Apache-2.0 or GPLv3

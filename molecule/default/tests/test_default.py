@@ -1,3 +1,6 @@
+# Copyright 2018 VMware, Inc.  All rights reserved.
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-only
+
 import os
 
 import testinfra.utils.ansible_runner
